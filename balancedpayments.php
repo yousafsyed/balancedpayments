@@ -1,11 +1,5 @@
 <?php
-
-/**
- * @author Yousaf Syed
- * @copyright 2014
- */
-
-namespace Balanced;
+require ("helper/unirest.php");
 
 class Balancedpayments
 {

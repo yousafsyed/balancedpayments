@@ -1,10 +1,19 @@
 <?php
 
-require("vendor/autoload.php");
+require("balancedpayments.php");
 
-$config = array("apikey"=>"asdfasdasd" , "payment_description"=>"balanced","statement_appear_as"=>"help");
-$balanced = new Balanced\Balancedpayments($config);
+$config = array(
+	"apikey"=>"" ,  // set your api key
+	"payment_description"=>"", // set the payment description
+	"statement_appear_as"=>"" // set the statement
 
+	);
+
+$balanced = new Balancedpayments($config);
+
+/**
+ * Create customer example
+ * */
 $userdata = array(
 	"name"=>"yousaf",
 	"email"=>"mmesunny@gmail.com",
