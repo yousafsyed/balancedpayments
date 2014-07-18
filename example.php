@@ -37,3 +37,9 @@ $card_id = Balancedpayments::tokenize_card($card_params);
  * Attach card to the customer
  * */
 Balancedpayments::add_card($customer_id, $card_id);
+
+/**
+ * Charge The Card
+ * */
+$amount = "100";// 100 USD
+Balancedpayments::charge_card($card_id, $amount);

@@ -79,6 +79,19 @@ Balancedpayments::add_card($customer_id, $card_id);
 ```
 
 
+### Charge Card
+
+
+ ```php
+/**
+ * Charge The Card
+ * */
+ $amount = "100"; // 100 USD
+Balancedpayments::charge_card($card_id, $amount);
+
+```
+
+
 
 ### Author
 Name: Yousaf Syed
