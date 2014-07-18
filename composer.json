@@ -16,14 +16,4 @@
             }
         }
     }],
-    "require": {
-        "mashape/unirest-php": "dev-master",
-        "balancedpayments":"dev-master"
-    },
-    "autoload": {
-        "psr-0": {
-            "Unirest": "lib/",
-            "Balancedpayments":"src/"
-        }
-    }
 }
