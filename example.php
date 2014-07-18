@@ -3,9 +3,9 @@
 require ("balancedpayments.php");
 
 $config = array(
-	"apikey"              => "", // set your api key
-	"payment_description" => "", // set the payment description
-	"statement_appear_as" => ""// set the statement
+	"apikey"              => "ak-test-1iyjUQ7UcMu6N20Aub3GayZsSARhLygoR", // set your api key
+	"payment_description" => " Charging the card", // set the payment description
+	"statement_appear_as" => "Example Company"// set the statement
 
 );
 

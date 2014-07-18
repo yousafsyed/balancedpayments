@@ -10,32 +10,44 @@ Balanced Payments Php Library. This library is free to use for commercial and pe
 3. Bank Account Functionality
 4. Documentation for the library
 
-### Usage
+Usage
+-----
+
+### Config
 Just download the zip from github and include the balancedpayments.php as follows
 
 ```php
 
-require("balancedpayments.php");
+require ("balancedpayments.php");
 
 $config = array(
-	"apikey"=>"" ,  // set your api key
-	"payment_description"=>"", // set the payment description
-	"statement_appear_as"=>"" // set the statement
+	"apikey"              => "ak-test-23923840140fisdfjsodfjd9fjks22sdww", // set your api key secret
+	"payment_description" => " Charging the card", // set the payment description
+	"statement_appear_as" => "Example Company"// set the statement
 
-	);
+);
 
-$balanced = new Balancedpayments($config);
+Balancedpayments::config($config); // pass the config array
+
+```
+### Create Customer
+Asuming that you have set the configuration. To set the userdata you can check the documentation of balanced payments. I have configured the minimum requirements that are require to PCI compliance according to the balanced payments
+
+```php
 
 /**
  * Create customer example
  * */
 $userdata = array(
-	"name"=>"yousaf",
-	"email"=>"mmesunny@gmail.com",
-	"meta[user_id]"=>"123"
-	);
-$balanced->create_user($userdata);
+	"name"          => "yousaf",
+	"email"         => "mmesunny@gmail.com",
+	"adddres"       => "NY street 1",
+	"meta[user_id]" => "123"
+);
+Balancedpayments::create_user($userdata);
+
 ```
+
 ### Author
 Name: Yousaf Syed
 Email: mmesunny@gmail.com
