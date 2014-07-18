@@ -1,7 +1,7 @@
 Blanaced Payments Php Library
 ================
 
-Balanced Payments Php Library. This library is free to use for commercial and personal usage. Just download it and include into your project.
+Balanced Payments Php Library. This library is free to use for commercial and personal usage. Just download it and include into your project. Feel free to extend and commit on this library. I will approve the new changes if they are really good. 
 
 ### Todo
 ---
