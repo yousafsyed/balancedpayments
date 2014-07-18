@@ -1,7 +1,7 @@
 Blanaced Payments Php Library
 ================
 
-Balanced Payments Php Library. This library depends on third party library which is Unirest you should consult the Unirest licesnce for the usage. This library is free to use for commercial and personal usage. Just download it and include into your project.
+Balanced Payments Php Library. This library is free to use for commercial and personal usage. Just download it and include into your project.
 
 Todo
 ---
@@ -9,3 +9,28 @@ Todo
 2. More Examples
 3. Bank Account Functionality
 4. Documentation for the library
+
+
+```php
+
+require("balancedpayments.php");
+
+$config = array(
+	"apikey"=>"" ,  // set your api key
+	"payment_description"=>"", // set the payment description
+	"statement_appear_as"=>"" // set the statement
+
+	);
+
+$balanced = new Balancedpayments($config);
+
+/**
+ * Create customer example
+ * */
+$userdata = array(
+	"name"=>"yousaf",
+	"email"=>"mmesunny@gmail.com",
+	"meta[user_id]"=>"123"
+	);
+$balanced->create_user($userdata);
+```
