@@ -44,7 +44,7 @@ Asuming that you have set the configuration. To set the userdata you can check t
 		"adddres"       => "NY street 1",
 		"meta[user_id]" => "123"
 	);
-	Balancedpayments::create_user($userdata);
+	$customer_id =Balancedpayments::create_user($userdata);
 
 ```
 
@@ -62,7 +62,7 @@ Tokenize the card it will return the card_id that can be stored in database if r
 		"expiration_year"  => "2017",
 		"security_code"    => "123"
 	);
-	Balancedpayments::tokenize_card($card_params);
+	$card_id = Balancedpayments::tokenize_card($card_params);
 
 ```
 
