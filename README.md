@@ -31,20 +31,38 @@ Balancedpayments::config($config); // pass the config array
 
 ```
 ### Create Customer
-Asuming that you have set the configuration. To set the userdata you can check the documentation of balanced payments. I have configured the minimum requirements that are require to PCI compliance according to the balanced payments
+Asuming that you have set the configuration. To set the userdata you can check the documentation of balanced payments. I have configured the minimum requirements that are require to PCI compliance according to the balanced payments. This method will return the customer id. you can save it to your database
 
 ```php
 
-/**
- * Create customer example
- * */
-$userdata = array(
-	"name"          => "yousaf",
-	"email"         => "mmesunny@gmail.com",
-	"adddres"       => "NY street 1",
-	"meta[user_id]" => "123"
-);
-Balancedpayments::create_user($userdata);
+	/**
+	 * Create customer example
+	 * */
+	$userdata = array(
+		"name"          => "yousaf",
+		"email"         => "mmesunny@gmail.com",
+		"adddres"       => "NY street 1",
+		"meta[user_id]" => "123"
+	);
+	Balancedpayments::create_user($userdata);
+
+```
+
+### Tokenize Card
+Tokenize the card it will return the card_id that can be stored in database if required and this id can be used to add the card to customer and later on we can charge this card
+
+ ```php
+
+	 /**
+	 * Tokenize Card
+	 **/
+	$card_params = array(
+		"card_number"      => "4111111111111111",
+		"expiration_month" => "08",
+		"expiration_year"  => "2017",
+		"security_code"    => "123"
+	);
+	Balancedpayments::tokenize_card($card_params);
 
 ```
 

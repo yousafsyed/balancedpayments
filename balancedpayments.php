@@ -96,8 +96,6 @@ class Balancedpayments {
 		$response = BalancedHTTP::delete(self::$cards.'/'.$card_id, null, null, self::$apikey, '');
 		$deleted  = json_decode($response->raw_body, true);
 
-		//print_r($deleted);
-
 		return true;
 	}
 

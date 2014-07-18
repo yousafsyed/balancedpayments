@@ -21,3 +21,14 @@ $userdata = array(
 	"meta[user_id]" => "123"
 );
 Balancedpayments::create_user($userdata);
+
+/**
+ * Tokenize Card
+ * */
+$card_params = array(
+	"card_number"      => "4111111111111111",
+	"expiration_month" => "08",
+	"expiration_year"  => "2017",
+	"security_code"    => "123"
+);
+Balancedpayments::tokenize_card($card_params);
