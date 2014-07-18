@@ -5,9 +5,9 @@
  * @copyright 2014
  */
 
-include ('Unirest.php');
+namespace Balanced;
 
-class Balanced
+class Balancedpayments
 {
     private $market_place;
     private $apikey;
