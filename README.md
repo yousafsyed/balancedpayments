@@ -66,6 +66,20 @@ Tokenize the card it will return the card_id that can be stored in database if r
 
 ```
 
+
+### Attach card to customer
+
+
+ ```php
+/**
+ * Attach card to the customer
+ * */
+Balancedpayments::add_card($customer_id, $card_id);
+
+```
+
+
+
 ### Author
 Name: Yousaf Syed
 
