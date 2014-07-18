@@ -93,7 +93,7 @@ Balancedpayments::charge_card($card_id, $amount);
 
 
 
-### Author
+### Authors
 Name: Yousaf Syed
 Email: mmesunny@gmail.com
 
