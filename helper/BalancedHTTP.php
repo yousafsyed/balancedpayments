@@ -1,8 +1,8 @@
 <?php
 include ('HttpMethod.php');
 include ('HttpResponse.php');
-use balancedpayments\HttpMethod;
-use balancedpayments\HttpResponse;
+use BalancedHTTP\HttpMethod;
+use BalancedHTTP\HttpResponse;
 
 class BalancedHTTP {
 
