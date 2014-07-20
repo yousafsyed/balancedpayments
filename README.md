@@ -97,5 +97,4 @@ Balancedpayments::charge_card($card_id, $amount);
 Name: Yousaf Syed
 || Email: mmesunny@gmail.com
 
-Name: Hammad Ahmed
-|| Email: hammad.sofwer@gmail.com
+
