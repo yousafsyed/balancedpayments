@@ -3,7 +3,7 @@
 require ("balancedpayments.php");
 
 $config = array(
-"apikey"              => "ak-test-1iyjUQ7UcMu6Nasdasdasdsa", // set your api key
+"apikey"              => "ak-test-1iyjUQ7UcMu6N20Aub323834502349203409352", // set your api key
 "payment_description" => " Charging the card", // set the payment description
 "statement_appear_as" => "Example Company"// set the statement
 
@@ -35,7 +35,7 @@ $config = array(
 );
 	$card_info_array = Balancedpayments::tokenize_card($card_params);
 	$card_id         = $card_info_array['cards'][0]['id'];
-	//print_r($card_info_array);
+	print_r($card_info_array);
 	/**
 	 * Attach card to the customer
 	 * */
@@ -45,6 +45,6 @@ $config = array(
 	/**
 	 * Charge The Card
 	 * */
-	$amount   = "100";// 100 USD
+	$amount   = "2100";// 100 USD
 	$response = Balancedpayments::charge_card($card_id, $amount);
-	//print_r($response)
+	print_r($response);
