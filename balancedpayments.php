@@ -8,6 +8,7 @@ class Balancedpayments {
 	private static $payment_description;
 	public static $cards = 'https://api.balancedpayments.com/cards';
 	public static $users = 'https://api.balancedpayments.com/customers';
+	public static $banks = 'https://api.balancedpayments.com/bank_accounts';
 
 	public static function config($config) {
 		self::$apikey              = $config['apikey'];
@@ -73,4 +74,52 @@ class Balancedpayments {
 		$cards    = json_decode($response->raw_body, true);
 		return $cards;
 	}
+
+	public static function creatBankAccountDirect($bankDetails) {
+		$response  = BalancedHTTP::post(self::$banks, null, $bankDetails, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+
+		return $bank_data;
+	}
+	public static function getBankAccountById($bankAccountId) {
+		$response  = BalancedHTTP::get(self::$banks . '/' . $bankAccountId, null, null, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+
+		return $bank_data;
+	}
+
+	public static function getAllBankAccounts($limitOffset) {
+		$response  = BalancedHTTP::get(self::$banks, null, $limitOffset, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+
+		return $bank_data;
+	}
+
+	public static function updateBankAccount($bankData, $bankAccountId) {
+		$response  = BalancedHTTP::put(self::$banks . '/' . $bankAccountId, null, $bankData, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+
+		return $bank_data;
+	}
+
+	public static function addBankToCustomer($bankAccountId, $customer_link) {
+		$response  = BalancedHTTP::put(self::$banks . '/' . $bankAccountId, null, $customer_link, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+
+		return $bank_data;
+	}
+
+	public static function deleteBankAccount($bankAccountId) {
+		$response  = BalancedHTTP::delete(self::$banks . '/' . $bankAccountId, null, null, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+		return $bank_data;
+
+	}
+	public static function debitBankAccount($bankAccountId, $debitDetails) {
+		$response  = BalancedHTTP::post(self::$banks . '/' . $bankAccountId . '/debits', null, $debitDetails, self::$apikey, '');
+		$bank_data = json_decode($response->raw_body, true);
+		return $bank_data;
+
+	}
+
 }
