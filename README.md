@@ -93,6 +93,94 @@ Balancedpayments::charge_card($card_id, $amount); // this will return an array
 
 
 
+### Creat bank Account
+
+
+ ```php
+/**
+ * Creat bank Account
+ * */
+$bankDetails = array(
+	"account_number"        => "9900000002",
+	"account_type"          => "checking",
+	"name"                  => "Syed Yousaf Ehsan Navqi Bank Test",
+	"routing_number"        => "021000021",
+	"address[city]"         => "Tenerife",
+	"address[line1]"        => "Av Juan Carlos",
+	"address[line2]"        => "",
+	"address[state]"        => "Santa Cruz De Tenerife",
+	"address[postal_code]"  => "38650",
+	"address[country_code]" => "ES",
+);
+$bank_data_array = Balancedpayments::creatBankAccountDirect($bankDetails);
+print_r($bank_data_array);
+
+```
+
+
+
+### Get bank account by id
+
+
+ ```php
+
+$bankAccountId   = "BA1oi3o5CoTt94I8sKHSTFo9";
+$bankAcountArray = Balancedpayments::getBankAccountById($bankAccountId);
+print_r($bankAcountArray);
+
+```
+
+### Get All bank Accounts 
+
+
+ ```php
+
+$limitOffset = array(
+	'limit'  => "10",
+	'offset' => '0',
+);
+
+$bankAcountArray = Balancedpayments::getAllBankAccounts($limitOffset);
+print_r($bankAcountArray);
+
+```
+
+
+### Update the Bank Account
+
+
+ ```php
+
+$updateBankDetails = array(
+	"links[customer]"                  => "CU4SUGO6YhgivR19Ze121ybr", // customer id
+	"links[bank_account_verification]" => "BZ1NndEHupZUuYDNPf75qXPv", // verfication id
+	// in meta data you can add any thing that you want as follows
+	"meta[user_id]"  => "182381",
+	"meta[facebook]" => "facebook.com/link",
+
+);
+$bank_account_id = "BA1oi3o5CoTt94I8sKHSTFo9";// bank account id that you want to edit
+$bank_data_array = Balancedpayments::updateBankAccount($updateBankDetails, $bank_account_id);
+print_r($bank_data_array);
+
+```
+
+
+### Add the Bank Account to customer
+
+
+ ```php
+
+$customer_data = array(
+	"customer" => "/customers/CU4SUGO6YhgivR19Ze121ybr"// customer Link
+);
+$bank_account_id = "BA15jLxp4neimaQLn1QPB73D";// bank account id that you want to edit
+$responseArray   = Balancedpayments::addBankToCustomer($bank_account_id, $customer_data);
+print_r($responseArray);
+
+```
+
+
 ### Authors
 Name: Yousaf Syed
 || Email: mmesunny@gmail.com
