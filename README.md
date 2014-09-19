@@ -42,9 +42,9 @@ Asuming that you have set the configuration. To set the userdata you can check t
 		"name"          => "yousaf",
 		"email"         => "mmesunny@gmail.com",
 		"adddres"       => "NY street 1",
-		"meta[user_id]" => "123"
+		"meta[user_id]" => "123" // for more meta data you can see the documentation in balanced api
 	);
-	$customer_id =Balancedpayments::create_user($userdata);
+	$customer_data_array =Balancedpayments::create_user($userdata); // this will return an array
 
 ```
 
@@ -57,12 +57,12 @@ Tokenize the card it will return the card_id that can be stored in database if r
 	 * Tokenize Card
 	 **/
 	$card_params = array(
-		"card_number"      => "4111111111111111",
+		"number"      => "4111111111111111",
 		"expiration_month" => "08",
 		"expiration_year"  => "2017",
 		"security_code"    => "123"
 	);
-	$card_id = Balancedpayments::tokenize_card($card_params);
+	$card_data_array = Balancedpayments::tokenize_card($card_params);
 
 ```
 
@@ -74,7 +74,7 @@ Tokenize the card it will return the card_id that can be stored in database if r
 /**
  * Attach card to the customer
  * */
-Balancedpayments::add_card($customer_id, $card_id);
+Balancedpayments::add_card($customer_id, $card_id); // this returns and array
 
 ```
 
@@ -87,7 +87,7 @@ Balancedpayments::add_card($customer_id, $card_id);
  * Charge The Card
  * */
  $amount = "100"; // 100 USD
-Balancedpayments::charge_card($card_id, $amount);
+Balancedpayments::charge_card($card_id, $amount); // this will return an array
 
 ```
 
