@@ -7,7 +7,7 @@ Balanced Payments Php Library. This library is free to use for commercial and pe
 ---
 1. Composer
 2. ~~More Examples .~~ ---- Done
-3. ~~Bank Account Functionality.~~ --- Done
+3. ~~Bank Account Functionality.~~ ---- Done
 4. Documentation for the library
 
 Usage
