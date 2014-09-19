@@ -180,9 +180,41 @@ print_r($responseArray);
 
 ```
 
+### Delete bank Account
 
-### Authors
+
+ ```php
+
+
+$bank_account_id = "BA1oi3o5CoTt94I8sKHSTFo9";// bank account id that you want to edit
+$responseArray   = Balancedpayments::deleteBankAccount($bank_account_id);
+print_r($responseArray);
+
+```
+
+
+
+
+### Debit bank Account
+
+
+ ```php
+
+
+$debit_details = array(
+	"amount"                  => "10000", // integer
+	"appears_on_statement_as" => "My Company Name",
+	"description"             => "Description Goes here",
+	"meta[userid]"            => "1231234123",
+);
+$bank_account_id = "BA15jLxp4neimaQLn1QPB73D";// bank account id that you want to edit
+$responseArray   = Balancedpayments::debitBankAccount($bank_account_id, $debit_details);
+print_r($responseArray);
+
+```
+
+### Author
 Name: Yousaf Syed
-|| Email: mmesunny@gmail.com
+|| Emails: mmesunny@gmail.com, me@yousafsyed.com
 
 
